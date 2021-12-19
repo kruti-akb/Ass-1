@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Cricket Score Page</title>
+        
+    </head>
+    <body style="background-image: url(http://localhost:8050/stadium.jpg);">
+        <script language="javascript">
+        
+            var ws=new WebSocket('ws://localhost:8050');
+
+            ws.addEventListener('message',function(msg){
+
+               var scoreData=msg.data;
+
+               document.getElementById('score').innerHTML="Live Cricket Score : "+scoreData;
+                
+            });
+        
+        </script>
+    <body>
+        <p style="margin:50px 50px;" id="score">
+               
+        </p>
+       
+    </body>
+</html>
